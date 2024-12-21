@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Ads Earn Rewards</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8ff;
+            color: #000;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .container {
+            text-align: center;
+            background: #f0ffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .dice-table {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dice {
+            width: 60px;
+            height: 60px;
+            background-color: #fff;
+            border: 2px solid #000;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            background: linear-gradient(145deg, #e2e2e2, #ffffff);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .dice:hover {
+            transform: translateY(-5px);
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background-color: #333;
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .center {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .top-left {
+            top: 15%;
+            left: 15%;
+        }
+
+        .top-right {
+            top: 15%;
+            right: 15%;
+        }
+
+        .bottom-left {
+            bottom: 15%;
+            left: 15%;
+        }
+
+        .bottom-right {
+            bottom: 15%;
+            right: 15%;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            margin: 10px 0;
+            background-color: #48d1cc;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #00bcd4;
+        }
+
+        #dice-result {
+            font-size: 18px;
+            color: red;
+            margin-top: 10px;
+        }
+
+        .stats {
+            margin-top: 20px;
+        }
+
+        .stats p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        #user-photo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 2px solid #48d1cc;
+        }
+
+        #user-name {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .withdraw-section {
+            margin-top: 20px;
+        }
+
+        #withdraw-form input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            width: calc(100% - 20px);
+            font-size: 14px;
+        }
+
+        #withdraw-form button {
+            background-color: #48d1cc;
+            color: #fff;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        #withdraw-form button:hover {
+            background-color: #00bcd4;
+        }
+
+        #withdraw-status {
+            font-size: 14px;
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Play Dice Game</h2>
+        <div class="user-info">
+            <script data-pagespeed-no-defer>//<![CDATA[
+(function(){for(var g="function"==typeof Object.defineProperties?Object.defineProperty:function(b,c,a){if(a.get||a.set)throw new TypeError("ES3 does not support getters and setters.");b!=Array.prototype&&b!=Object.prototype&&(b[c]=a.value)},h="undefined"!=typeof window&&window===this?this:"undefined"!=typeof global&&null!=global?global:this,k=["String","prototype","repeat"],l=0;l<k.length-1;l++){var m=k[l];m in h||(h[m]={});h=h[m]}var n=k[k.length-1],p=h[n],q=p?p:function(b){var c;if(null==this)throw new TypeError("The 'this' value for String.prototype.repeat must not be null or undefined");c=this+"";if(0>b||1342177279<b)throw new RangeError("Invalid count value");b|=0;for(var a="";b;)if(b&1&&(a+=c),b>>>=1)c+=c;return a};q!=p&&null!=q&&g(h,n,{configurable:!0,writable:!0,value:q});var t=this;function u(b,c){var a=b.split("."),d=t;a[0]in d||!d.execScript||d.execScript("var "+a[0]);for(var e;a.length&&(e=a.shift());)a.length||void 0===c?d[e]?d=d[e]:d=d[e]={}:d[e]=c};function v(b){var c=b.length;if(0<c){for(var a=Array(c),d=0;d<c;d++)a[d]=b[d];return a}return[]};function w(b){var c=window;if(c.addEventListener)c.addEventListener("load",b,!1);else if(c.attachEvent)c.attachEvent("onload",b);else{var a=c.onload;c.onload=function(){b.call(this);a&&a.call(this)}}};var x;function y(b,c,a,d,e){this.h=b;this.j=c;this.l=a;this.f=e;this.g={height:window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,width:window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth};this.i=d;this.b={};this.a=[];this.c={}}function z(b,c){var a,d,e=c.getAttribute("data-pagespeed-url-hash");if(a=e&&!(e in b.c))if(0>=c.offsetWidth&&0>=c.offsetHeight)a=!1;else{d=c.getBoundingClientRect();var f=document.body;a=d.top+("pageYOffset"in window?window.pageYOffset:(document.documentElement||f.parentNode||f).scrollTop);d=d.left+("pageXOffset"in window?window.pageXOffset:(document.documentElement||f.parentNode||f).scrollLeft);f=a.toString()+","+d;b.b.hasOwnProperty(f)?a=!1:(b.b[f]=!0,a=a<=b.g.height&&d<=b.g.width)}a&&(b.a.push(e),b.c[e]=!0)}y.prototype.checkImageForCriticality=function(b){b.getBoundingClientRect&&z(this,b)};u("pagespeed.CriticalImages.checkImageForCriticality",function(b){x.checkImageForCriticality(b)});u("pagespeed.CriticalImages.checkCriticalImages",function(){A(x)});function A(b){b.b={};for(var c=["IMG","INPUT"],a=[],d=0;d<c.length;++d)a=a.concat(v(document.getElementsByTagName(c[d])));if(a.length&&a[0].getBoundingClientRect){for(d=0;c=a[d];++d)z(b,c);a="oh="+b.l;b.f&&(a+="&n="+b.f);if(c=!!b.a.length)for(a+="&ci="+encodeURIComponent(b.a[0]),d=1;d<b.a.length;++d){var e=","+encodeURIComponent(b.a[d]);131072>=a.length+e.length&&(a+=e)}b.i&&(e="&rd="+encodeURIComponent(JSON.stringify(B())),131072>=a.length+e.length&&(a+=e),c=!0);C=a;if(c){d=b.h;b=b.j;var f;if(window.XMLHttpRequest)f=new XMLHttpRequest;else if(window.ActiveXObject)try{f=new ActiveXObject("Msxml2.XMLHTTP")}catch(r){try{f=new ActiveXObject("Microsoft.XMLHTTP")}catch(D){}}f&&(f.open("POST",d+(-1==d.indexOf("?")?"?":"&")+"url="+encodeURIComponent(b)),f.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),f.send(a))}}}function B(){var b={},c;c=document.getElementsByTagName("IMG");if(!c.length)return{};var a=c[0];if(!("naturalWidth"in a&&"naturalHeight"in a))return{};for(var d=0;a=c[d];++d){var e=a.getAttribute("data-pagespeed-url-hash");e&&(!(e in b)&&0<a.width&&0<a.height&&0<a.naturalWidth&&0<a.naturalHeight||e in b&&a.width>=b[e].o&&a.height>=b[e].m)&&(b[e]={rw:a.width,rh:a.height,ow:a.naturalWidth,oh:a.naturalHeight})}return b}var C="";u("pagespeed.CriticalImages.getBeaconData",function(){return C});u("pagespeed.CriticalImages.Run",function(b,c,a,d,e,f){var r=new y(b,c,a,e,f);x=r;d&&w(function(){window.setTimeout(function(){A(r)},0)})});})();pagespeed.CriticalImages.Run('/mod_pagespeed_beacon','https://ilkd.online/dice2.html','2L-ZMDIrHf',true,false,'4TsJ0GnvgFQ');
+//]]></script><script data-pagespeed-no-defer>//<![CDATA[
+(function(){for(var g="function"==typeof Object.defineProperties?Object.defineProperty:function(b,c,a){if(a.get||a.set)throw new TypeError("ES3 does not support getters and setters.");b!=Array.prototype&&b!=Object.prototype&&(b[c]=a.value)},h="undefined"!=typeof window&&window===this?this:"undefined"!=typeof global&&null!=global?global:this,k=["String","prototype","repeat"],l=0;l<k.length-1;l++){var m=k[l];m in h||(h[m]={});h=h[m]}var n=k[k.length-1],p=h[n],q=p?p:function(b){var c;if(null==this)throw new TypeError("The 'this' value for String.prototype.repeat must not be null or undefined");c=this+"";if(0>b||1342177279<b)throw new RangeError("Invalid count value");b|=0;for(var a="";b;)if(b&1&&(a+=c),b>>>=1)c+=c;return a};q!=p&&null!=q&&g(h,n,{configurable:!0,writable:!0,value:q});var t=this;function u(b,c){var a=b.split("."),d=t;a[0]in d||!d.execScript||d.execScript("var "+a[0]);for(var e;a.length&&(e=a.shift());)a.length||void 0===c?d[e]?d=d[e]:d=d[e]={}:d[e]=c};function v(b){var c=b.length;if(0<c){for(var a=Array(c),d=0;d<c;d++)a[d]=b[d];return a}return[]};function w(b){var c=window;if(c.addEventListener)c.addEventListener("load",b,!1);else if(c.attachEvent)c.attachEvent("onload",b);else{var a=c.onload;c.onload=function(){b.call(this);a&&a.call(this)}}};var x;function y(b,c,a,d,e){this.h=b;this.j=c;this.l=a;this.f=e;this.g={height:window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,width:window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth};this.i=d;this.b={};this.a=[];this.c={}}function z(b,c){var a,d,e=c.getAttribute("data-pagespeed-url-hash");if(a=e&&!(e in b.c))if(0>=c.offsetWidth&&0>=c.offsetHeight)a=!1;else{d=c.getBoundingClientRect();var f=document.body;a=d.top+("pageYOffset"in window?window.pageYOffset:(document.documentElement||f.parentNode||f).scrollTop);d=d.left+("pageXOffset"in window?window.pageXOffset:(document.documentElement||f.parentNode||f).scrollLeft);f=a.toString()+","+d;b.b.hasOwnProperty(f)?a=!1:(b.b[f]=!0,a=a<=b.g.height&&d<=b.g.width)}a&&(b.a.push(e),b.c[e]=!0)}y.prototype.checkImageForCriticality=function(b){b.getBoundingClientRect&&z(this,b)};u("pagespeed.CriticalImages.checkImageForCriticality",function(b){x.checkImageForCriticality(b)});u("pagespeed.CriticalImages.checkCriticalImages",function(){A(x)});function A(b){b.b={};for(var c=["IMG","INPUT"],a=[],d=0;d<c.length;++d)a=a.concat(v(document.getElementsByTagName(c[d])));if(a.length&&a[0].getBoundingClientRect){for(d=0;c=a[d];++d)z(b,c);a="oh="+b.l;b.f&&(a+="&n="+b.f);if(c=!!b.a.length)for(a+="&ci="+encodeURIComponent(b.a[0]),d=1;d<b.a.length;++d){var e=","+encodeURIComponent(b.a[d]);131072>=a.length+e.length&&(a+=e)}b.i&&(e="&rd="+encodeURIComponent(JSON.stringify(B())),131072>=a.length+e.length&&(a+=e),c=!0);C=a;if(c){d=b.h;b=b.j;var f;if(window.XMLHttpRequest)f=new XMLHttpRequest;else if(window.ActiveXObject)try{f=new ActiveXObject("Msxml2.XMLHTTP")}catch(r){try{f=new ActiveXObject("Microsoft.XMLHTTP")}catch(D){}}f&&(f.open("POST",d+(-1==d.indexOf("?")?"?":"&")+"url="+encodeURIComponent(b)),f.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),f.send(a))}}}function B(){var b={},c;c=document.getElementsByTagName("IMG");if(!c.length)return{};var a=c[0];if(!("naturalWidth"in a&&"naturalHeight"in a))return{};for(var d=0;a=c[d];++d){var e=a.getAttribute("data-pagespeed-url-hash");e&&(!(e in b)&&0<a.width&&0<a.height&&0<a.naturalWidth&&0<a.naturalHeight||e in b&&a.width>=b[e].o&&a.height>=b[e].m)&&(b[e]={rw:a.width,rh:a.height,ow:a.naturalWidth,oh:a.naturalHeight})}return b}var C="";u("pagespeed.CriticalImages.getBeaconData",function(){return C});u("pagespeed.CriticalImages.Run",function(b,c,a,d,e,f){var r=new y(b,c,a,e,f);x=r;d&&w(function(){window.setTimeout(function(){A(r)},0)})});})();pagespeed.CriticalImages.Run('/mod_pagespeed_beacon','https://ilkd.online/dice3.html','2L-ZMDIrHf',true,false,'pni0mju3nhY');
+//]]></script><img id="user-photo" src="" alt="User Photo" data-pagespeed-url-hash="2250287623" onload="pagespeed.CriticalImages.checkImageForCriticality(this);" data-pagespeed-url-hash="2175071610" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+            <p id="user-name"></p>
+        </div>
+        <script src="https://telegram.org/js/telegram-web-app.js"></script>
+        <script>
+            // Initialize Telegram WebApp
+                const tg = window.Telegram.WebApp;
+        
+                // Expand WebApp to full height
+                tg.expand();
+        
+                // Access user data
+                const user = tg.initDataUnsafe?.user;
+        
+                // Check if user data is available
+                if (user) {
+                    // Display user's photo
+                    const userPhoto = document.getElementById('user-photo');
+                    if (user.photo_url) {
+                        userPhoto.src = user.photo_url;
+                    } else {
+                        userPhoto.src = 'https://via.placeholder.com/100'; // Placeholder if no photo
+                    }
+        
+                    // Display user's name
+                    const userName = document.getElementById('user-name');
+                    userName.textContent = `Hello, ${user.first_name} ${user.last_name || ''} (@${user.username || 'No username'})`;
+                } else {
+                    document.querySelector('.user-info').innerHTML = '<p>User data not available</p>';
+                }
+        </script>
+        <button id="watch-ad-btn" onclick="watchAd()">Watch Ads FreeBet 0.10$</button>
+        <div id="dice-table" class="dice-table" style="display: none;">
+            <div class="dice" id="dice-1"></div>
+            <div class="dice" id="dice-2"></div>
+        </div>
+        <div id="game-controls" style="display: none;">
+            <p>Enter your betting points:</p>
+            <input type="number" id="bet-points" min="1" placeholder="Enter betting points">
+
+            <p>Choose your bet:</p>
+            <p>Big/Small Win multiplied by X2, If a draw multiplied by X5</p>
+            <select id="bet-choice">
+                <option value="big">Large (8-12)</option>
+                <option value="small">Small (2-6)</option>
+                <option value="tie">Draw (7)</option>
+            </select>
+
+            <button id="roll-dice-btn" onclick="rollDice()">Roll the Dice</button>
+            <p id="dice-result"></p>
+        </div>
+
+        <div class="stats">
+            <p>Money Earned: <span id="earned-points">0</span></p>
+        </div>
+        <div class="withdraw-section" style="margin-top: 20px;">
+            <h3>withdraw-amount</h3>
+            <form id="withdraw-form">
+                <input type="number" id="withdraw-amount" placeholder="Enter Points to be Withdrawn" required>
+                <input type="text" id="phone-number" placeholder="Enter Fund Number" required>
+                <input type="text" id="payment-method" placeholder="Fund Account Owner" required>
+                <button type="button" onclick="withdrawPoints()">Withdraw</button>
+            </form>
+            <p id="withdraw-status"></p>
+        </div>
+    </div>
+
+    <script src='//niphaumeenses.net/vignette.min.js' data-zone='8683397' data-sdk='show_8683397'></script>
+    <script>
+        let adWatched = false;
+            let earnedPoints = 0;
+            const maxBetPoints = 10000; // Set maximum bet points
+
+        function watchAd() {
+        // Disable the button while waiting for the ad
+          document.getElementById('watch-ad-btn').disabled = true;
+          document.getElementById('watch-ad-btn').textContent = 'Wait a minute...'; // Change button text
+
+        // Simulate watching an ad
+        if (typeof show_8683397 === 'function') {
+            show_8683397().then(() => {
+         setTimeout(() => {
+            adWatched = true;
+            earnedPoints += 15000;
+            document.getElementById('earned-points').textContent = earnedPoints;
+
+        // Display dice table and game controls after 3-second delay
+        document.getElementById('dice-table').style.display = 'flex';
+        document.getElementById('game-controls').style.display = 'block';
+        document.getElementById('watch-ad-btn').style.display = 'none'; // Hide the button
+        }, 3000); // 3-second delay
+    });
+   }
+ }
+    
+            
+        function generateDiceFace(diceElement, number) {
+            diceElement.innerHTML = '';
+            const positions = [
+                [],
+                ['center'],
+                ['top-left', 'bottom-right'],
+                ['top-left', 'center', 'bottom-right'],
+                ['top-left', 'top-right', 'bottom-left', 'bottom-right'],
+                ['top-left', 'top-right', 'center', 'bottom-left', 'bottom-right'],
+                ['top-left', 'top-right', 'bottom-left', 'bottom-right', 'center', 'bottom-center']
+            ];
+            positions[number].forEach(pos => {
+                const dot = document.createElement('div');
+                dot.className = `dot ${pos}`;
+                diceElement.appendChild(dot);
+            });
+        }
+
+        function rollDice() {
+            if (!adWatched) {
+                alert("You must watch an ad before rolling the dice!");
+                return;
+            }
+
+            const betPoints = parseInt(document.getElementById('bet-points').value);
+            const betChoice = document.getElementById('bet-choice').value;
+
+            // Validate if bet points are within range
+            if (isNaN(betPoints) || betPoints <= 0 || betPoints> earnedPoints || betPoints > maxBetPoints) {
+                document.getElementById('dice-result').textContent = `Invalid bet amount (Max ${maxBetPoints} Points).`;
+                return;
+                }
+
+            document.getElementById('roll-dice-btn').disabled = true;
+            show_8681039().then(() => {
+                document.getElementById('dice-result').textContent = "Roll the dice...";
+                document.getElementById('dice-table').style.display = 'none';
+
+                setTimeout(() => {
+                    const dice1 = Math.floor(Math.random() * 6) + 1;
+                    const dice2 = Math.floor(Math.random() * 6) + 1;
+                    const diceSum = dice1 + dice2;
+
+                    document.getElementById('dice-table').style.display = 'flex';
+                    generateDiceFace(document.getElementById('dice-1'), dice1);
+                    generateDiceFace(document.getElementById('dice-2'), dice2);
+
+                    let resultMessage;
+
+                    if (
+                        (betChoice === 'big' && diceSum >= 8 && diceSum <= 12) ||
+                        (betChoice === 'small' && diceSum >= 2 && diceSum <= 6) ||
+                        (betChoice === 'tie' && diceSum === 7)
+                    ) {
+                        let reward;
+                        if (betChoice === 'big' || betChoice === 'small') {
+                            reward = betPoints * 2; // Multiply the bet by 2 for big or small
+                        } else if (betChoice === 'tie') {
+                            reward = betPoints * 5; // Multiply the bet by 5 for a tie
+                        }
+                        earnedPoints += reward;
+                        resultMessage = `Congratulations! You won ${reward} points.`;
+                    } else {
+                        earnedPoints -= betPoints;
+                        resultMessage = "Sorry, you lost the bet.";
+                    }
+
+                    earnedPoints = Math.max(earnedPoints, 0);
+                    document.getElementById('dice-result').textContent = resultMessage;
+                    document.getElementById('earned-points').textContent = earnedPoints;
+                    document.getElementById('roll-dice-btn').disabled = false;
+                }, 3000);
+            });
+        }
+
+        function withdrawPoints() {
+    const amount = parseInt(document.getElementById('withdraw-amount').value);
+    const phoneNumber = document.getElementById('phone-number').value;
+    const paymentMethod = document.getElementById('payment-method').value;
+
+    // Access Telegram username dynamically from WebApp data
+    const tg = window.Telegram.WebApp;
+    const user = tg.initDataUnsafe?.user;
+    const telegramUsername = user ? user.username || 'No username' : 'No username';
+
+    if (
+        isNaN(amount) ||
+        amount < 150000 ||
+        amount > 100000 ||
+        amount > earnedPoints ||
+        !phoneNumber ||
+        !paymentMethod
+    ) {
+        document.getElementById('withdraw-status').textContent = "Invalid withdrawal details (Min 150k Points).";
+        return;
+    }
+
+    // Subtract the amount from earnedPoints
+    earnedPoints -= amount;
+
+    // Update the earned points on the UI
+    document.getElementById('earned-points').textContent = earnedPoints;
+    document.getElementById('withdraw-status').textContent = "Withdrawal request sent.";
+
+    const adminChatId = '@Sourav2k233';  // Admin's Telegram chat ID
+    const botToken = '7218251017:AAECzoh-wHonJoYOulNzfmNra4iKWHd_tDs';  // Your bot's token
+    const message = `New withdrawal request:\n\n` +
+        `Amount: ${amount}\n` +
+        `Phone number: ${phoneNumber}\n` +
+        `Payment Methods: ${paymentMethod}\n` +
+        `Username Telegram: @${telegramUsername}\n` +
+        `Remaining Points: ${earnedPoints}`;  // Include the remaining earned points in the message
+
+    fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: adminChatId, text: message })
+    }).then(response => response.json())
+        .then(data => {
+            if (data.ok) {
+                document.getElementById('withdraw-status').textContent += "\nAdmin successfully notified.";
+            } else {
+                document.getElementById('withdraw-status').textContent += "\nFailed to notify admin.";
+            }
+        }).catch(error => {
+            console.error(error);
+            document.getElementById('withdraw-status').textContent += "\nAn error occurred while contacting admin.";
+        });
+
+    // Reset the withdrawal form
+    document.getElementById('withdraw-form').reset();
+}
+
+
+
+    </script>
+</body>
